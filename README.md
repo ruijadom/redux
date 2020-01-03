@@ -21,3 +21,6 @@ Not allowed to directly update the state object
 _"To specify how the state tree is transformed by actions, you write pure reducers_
 
 #### Reducer - (prevState, action) => newState
+
+Reducers - specify how the app´s state changes in response to actions sent to hte store
+Function that accepts state and action as arguments, and returns the next state of the application
