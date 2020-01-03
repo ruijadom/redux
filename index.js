@@ -1,6 +1,10 @@
 const redux = require("redux");
+const reduxLogger = require("redux-logger");
+
 const createStore = redux.createStore;
 const combineReducers = redux.combineReducers;
+const applyMiddleware = redux.applyMiddleware;
+const logger = reduxLogger.createLogger();
 
 const BUY_PIZZA = "BUY_PIZZA";
 const BUY_DONUTS = "BUY_DONUTS";
@@ -57,16 +61,15 @@ const rootReducer = combineReducers({
   pizza: pizzaReducer,
   donuts: donutsReducer
 });
-const store = createStore(rootReducer); // Holds application state
+const store = createStore(rootReducer, applyMiddleware(logger)); // Holds application state
 console.log("Initial State", store.getState()); //Allows access to state via _getState()_
 
-const unsubscribe = store.subscribe(
-  () => console.log("Updated state", store.getState()) // Registers listeners via _subscribe(listener)_
-);
+const unsubscribe = store.subscribe(() => {}); // Registers listeners via _subscribe(listener)
 
 store.dispatch(buyPizza()); // Allows state to be updated via _dispatch(action)_
 store.dispatch(buyPizza());
 store.dispatch(buyPizza());
+store.dispatch(buyDonuts());
 store.dispatch(buyDonuts());
 unsubscribe(); // Handles unregistering of listerners via the function returned by subscribe(listener)
 
