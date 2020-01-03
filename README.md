@@ -15,3 +15,4 @@ Not allowed to directly update the state object
 ## Three Principle
 
 _"To specify how the state tree is transformed by actions, you write pure reducers_
+Reducer - (prevState, action) => newState
