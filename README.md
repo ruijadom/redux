@@ -24,3 +24,15 @@ _"To specify how the state tree is transformed by actions, you write pure reduce
 
 Reducers - specify how the app´s state changes in response to actions sent to hte store
 Function that accepts state and action as arguments, and returns the next state of the application
+
+# Redux Store
+
+One store for the entire application
+
+Responsabilities
+
+- Holds application state
+- Allows access to state via _getState()_
+- Allows state to be updated via _dispatch(action)_
+- Registers listeners via _subscribe(listener)_
+- Handles unregistering of listerners via the function returned by subscribe(listener)
