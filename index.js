@@ -28,14 +28,14 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-const store = createStore(reducer);
-console.log("Initial State", store.getState());
+const store = createStore(reducer); // Holds application state
+console.log("Initial State", store.getState()); //Allows access to state via _getState()_
 
-const unsubscribe = store.subscribe(() =>
-  console.log("Updated state", store.getState())
+const unsubscribe = store.subscribe(
+  () => console.log("Updated state", store.getState()) // Registers listeners via _subscribe(listener)_
 );
 
-store.dispatch(buyPizza());
-store.dispatch(buyPizza());
-store.dispatch(buyPizza());
-unsubscribe();
+store.dispatch(buyPizza()); // Allows state to be updated via _dispatch(action)_
+store.dispatch(buyPizza()); // Allows state to be updated via _dispatch(action)_
+store.dispatch(buyPizza()); // Allows state to be updated via _dispatch(action)_
+unsubscribe(); // Handles unregistering of listerners via the function returned by subscribe(listener)
