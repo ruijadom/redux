@@ -1,5 +1,7 @@
 # Redux Concepts
 
+![](redux.png)
+
 ## First Principle
 
 _"The state of your whole application is stored in an object tree within a single store"_
