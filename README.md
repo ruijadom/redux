@@ -36,3 +36,11 @@ Responsabilities
 - Allows state to be updated via _dispatch(action)_
 - Registers listeners via _subscribe(listener)_
 - Handles unregistering of listerners via the function returned by subscribe(listener)
+
+# Middleware
+
+Is the suggested way to extend Redux with custom functionality
+
+Provides a third-party extension point between dispatching an action, and the moment it reaches the reducer
+
+Use middleware for logging, crash reporting, performing asynchronous tasks etc
