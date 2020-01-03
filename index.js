@@ -1,8 +1,25 @@
-const BUY_CAKE = "BUY_PIZZA";
+const BUY_PIZZA = "BUY_PIZZA";
 
 function buyPizza() {
   return {
-    type: BUY_CAKE,
+    type: BUY_PIZZA,
     status: "First action"
   };
 }
+
+// (previewState, action) => newState
+
+const initialState = {
+  numOfPizzas: 24
+};
+
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
+    case BUY_PIZZA:
+      return {
+        numOfPizzas: state.numOfPizzas - 1
+      };
+    default:
+      return state;
+  }
+};
